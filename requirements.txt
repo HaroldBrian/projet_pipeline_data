@@ -1,6 +1,7 @@
 numpy
 pandas
 google-generativeai
+streamlit
 python-dotenv
 pydantic
 nbformat>=4.2.0
