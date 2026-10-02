@@ -1,0 +1,17 @@
+id,date_trajet,station_depart,station_arrivee,duree,distance,transport
+1,2026-03-02,Station_A,Station_D,18,4.2,Velo
+2,2026-03-02,Station_B,Station_C,25,6.1,Metro
+3,2026-03-03,Station_C,Station_A,12,2.8,Velo
+4,2026-03-03,Station_D,Station_B,35,9.5,BUS
+5,2026-03-04,Station_A,Station_C,22,5.4,Trottinette
+6,2026-03-04,Station_B,Station_D,16,3.7,Velo
+7,2026-03-05,Station_C,Station_B,28,7.2,Metro
+7,2026-03-05,Station_C,Station_B,28,7.2,Metro
+8,2026-03-05,Station_D,Station_A,,4.9,BUS
+9,2026-03-06,Station_A,Station_B,-10,3.1,Trottinette
+10,2026-03-06,Station_B,Station_C,20,5.6,Metro
+11,2026-03-07,Station_C,Station_D,15,3.5,Velo
+12,2026-03-07,Station_D,Station_A,31,8.4,BUS
+13,2026-03-08,Station_A,Station_D,19,4.6,Trottinette
+14,2026-03-08,Station_B,Station_A,24,5.9,Metro
+15,2026-03-09,Station_C,Station_A,17,4.1,Velo
