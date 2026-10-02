@@ -1,5 +1,4 @@
 import matplotlib.pyplot as plt
-import pandas as pd
 from traitement import controller_et_nettoyer, importer_donnees
 
 

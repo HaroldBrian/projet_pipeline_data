@@ -1,11 +1,7 @@
 numpy
 pandas
-google-generativeai
-streamlit
-python-dotenv
-pydantic
-nbformat>=4.2.0
-ipywidgets
 matplotlib
-
+google-generativeai
+python-dotenv
 ipykernel
+pymongo
