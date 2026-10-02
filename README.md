@@ -2,6 +2,15 @@
 
 Projet de synthèse Python : un pipeline **ETL** qui lit des données de trajets urbains, les nettoie, les analyse, puis les enregistre dans une base de données.
 
+## Lien gitHub :
+
+https://github.com/HaroldBrian/projet_pipeline_data
+
+## Binômes
+
+- Harold FOTSEU
+- Aristide MFOLOUM
+
 ## Structure
 
 ```
@@ -105,3 +114,4 @@ Le script permet à l'utilisateur de choisir de manière interactive le fichier 
 
 ```bash
 python bonus/bonus5.py
+```
