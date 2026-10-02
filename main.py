@@ -10,7 +10,6 @@ from bonus.bonus1_mongodb import exporter_json, charger_dans_mongodb
 def executer_pipeline():
     
     print("   LANCEMENT DU PIPELINE DE TRAITEMENT DE DONNÉES  ")
-    
 
     # 1, 2 & 3. Import, contrôle et nettoyage
     df_brut = importer_donnees("mobilite.csv")
