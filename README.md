@@ -98,3 +98,10 @@ Gemini rédige un commentaire des résultats, enregistré dans `files/commentair
    ```
 
 > Si l'IA ne répond pas, le script affiche un commentaire de secours, sans IA. Le fichier `.env` n'est pas envoyé sur Git.
+
+### Bonus 5 — Amélioration du pipeline (Sélection dynamique du CSV)
+
+Le script permet à l'utilisateur de choisir de manière interactive le fichier CSV à traiter, avec validation de l'existence du fichier et option de sortie.
+
+```bash
+python bonus/bonus5.py
