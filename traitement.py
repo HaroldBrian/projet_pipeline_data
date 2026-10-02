@@ -1,4 +1,9 @@
+import os
 import pandas as pd
+
+# Dossier où sont enregistrés tous les fichiers générés (CSV, BDD, graphiques...)
+DOSSIER_FICHIERS = os.path.join(os.path.dirname(os.path.abspath(__file__)), "files")
+os.makedirs(DOSSIER_FICHIERS, exist_ok=True)
 
 # Format du fichier CSV 
 csv_format = {

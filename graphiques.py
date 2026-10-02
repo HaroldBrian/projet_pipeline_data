@@ -1,5 +1,6 @@
+import os
 import matplotlib.pyplot as plt
-from traitement import controller_et_nettoyer, importer_donnees
+from traitement import controller_et_nettoyer, importer_donnees, DOSSIER_FICHIERS
 
 
 def generer_graphiques(df):
@@ -18,9 +19,9 @@ def generer_graphiques(df):
     plt.ylabel('Nombre de trajets')
     plt.xticks(rotation=0)
     plt.tight_layout()
-    plt.savefig('trajets_par_transport.png')
+    plt.savefig(os.path.join(DOSSIER_FICHIERS, 'trajets_par_transport.png'))
     plt.close()
-    print("-Graphique 1 sauvegardé : 'trajets_par_transport.png'")
+    print("-Graphique 1 sauvegardé : 'files/trajets_par_transport.png'")
 
     # Graphique 2 : Distance totale par moyen de transport (Camembert)
     plt.figure(figsize=(7, 7))
@@ -29,9 +30,9 @@ def generer_graphiques(df):
     plt.title('Répartition de la distance totale par moyen de transport')
     plt.ylabel('')  # pour supprimer le libellé d'axe automatique
     plt.tight_layout()
-    plt.savefig('distance_par_transport.png')
+    plt.savefig(os.path.join(DOSSIER_FICHIERS, 'distance_par_transport.png'))
     plt.close()
-    print("-Graphique 2 sauvegardé : 'distance_par_transport.png'\n")
+    print("-Graphique 2 sauvegardé : 'files/distance_par_transport.png'\n")
 
 if __name__ == "__main__":
     df_brut = importer_donnees()

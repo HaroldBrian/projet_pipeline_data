@@ -4,7 +4,7 @@ from traitement import importer_donnees, controller_et_nettoyer
 from analyse import calculer_indicateurs
 from graphiques import generer_graphiques
 from chargement_bdd import exporter_csv, charger_dans_bdd
-from bonus_mongodb import exporter_json, charger_dans_mongodb
+from bonus.bonus1_mongodb import exporter_json, charger_dans_mongodb
 
 
 def executer_pipeline():
@@ -23,12 +23,12 @@ def executer_pipeline():
     generer_graphiques(df_propre)
 
     # 6 & 7. Exportation CSV et chargement en BDD
-    exporter_csv(df_propre, "resultats.csv")
-    charger_dans_bdd(df_propre, "mobilite.db")
+    exporter_csv(df_propre)
+    charger_dans_bdd(df_propre)
 
     # Bonus 1. Exportation JSON et chargement dans MongoDB
-    exporter_json(df_propre, "resultats.json")
-    charger_dans_mongodb("resultats.json")
+    exporter_json(df_propre)
+    charger_dans_mongodb()
 
     
     print("===PIPELINE EXÉCUTÉ AVEC SUCCÈS !===")

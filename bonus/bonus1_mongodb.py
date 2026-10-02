@@ -8,19 +8,18 @@ from pymongo.errors import ServerSelectionTimeoutError
 
 # Accès au dossier parent pour réutiliser traitement.py et mobilite.csv
 DOSSIER_PROJET = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DOSSIER_BONUS = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(DOSSIER_PROJET)
 
-from traitement import importer_donnees, controller_et_nettoyer
+from traitement import importer_donnees, controller_et_nettoyer, DOSSIER_FICHIERS
 
-def exporter_json(df, nom_fichier=os.path.join(DOSSIER_BONUS, "resultats.json")):
+def exporter_json(df, nom_fichier=os.path.join(DOSSIER_FICHIERS, "resultats.json")):
     print("=== BONUS 1. EXPORT JSON ===")
     df = df.copy()
     df['date_trajet'] = df['date_trajet'].astype(str)  # date au format "AAAA-MM-JJ"
     df.to_json(nom_fichier, orient="records", indent=2, force_ascii=False)
-    print(f"-Fichier généré avec succès : '{nom_fichier}'\n")
+    print(f"-Fichier généré avec succès : '{os.path.relpath(nom_fichier)}'\n")
 
-def charger_dans_mongodb(nom_fichier=os.path.join(DOSSIER_BONUS, "resultats.json"), url="mongodb://localhost:27017/",
+def charger_dans_mongodb(nom_fichier=os.path.join(DOSSIER_FICHIERS, "resultats.json"), url="mongodb://localhost:27017/",
                          nom_bdd="mobilite", nom_collection="trajets"):
     print("=== BONUS 1. CHARGEMENT DANS MONGODB ===")
 

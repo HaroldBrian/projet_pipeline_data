@@ -1,14 +1,15 @@
+import os
 import sqlite3
-from traitement import importer_donnees, controller_et_nettoyer, csv_format
+from traitement import importer_donnees, controller_et_nettoyer, csv_format, DOSSIER_FICHIERS
 
-def exporter_csv(df, nom_fichier="resultats.csv", format_csv=csv_format):
+def exporter_csv(df, nom_fichier=os.path.join(DOSSIER_FICHIERS, "resultats.csv"), format_csv=csv_format):
     #Exportation des données nettoyées au format CSV
     df[format_csv["champs"]].to_csv(nom_fichier, index=False, sep=format_csv["sep"],
                                     encoding=format_csv["encoding"], decimal=format_csv["decimal"])
     print("=== 6. EXPORT CSV ===")
-    print(f"-Fichier généré avec succès : '{nom_fichier}'\n")
+    print(f"-Fichier généré avec succès : '{os.path.relpath(nom_fichier)}'\n")
 
-def charger_dans_bdd(df, nom_bdd="mobilite.db"):
+def charger_dans_bdd(df, nom_bdd=os.path.join(DOSSIER_FICHIERS, "mobilite.db")):
     #Chargement des données nettoyées dans la table trajets
     print("=== 7. CHARGEMENT EN BASE DE DONNÉES (SQLite) ===")
     
@@ -42,7 +43,7 @@ def charger_dans_bdd(df, nom_bdd="mobilite.db"):
     
     conn.commit()
     conn.close()
-    print(f"-Données insérées avec succès dans '{nom_bdd}' ({total_bdd} lignes dans la table 'trajets').\n")
+    print(f"-Données insérées avec succès dans '{os.path.relpath(nom_bdd)}' ({total_bdd} lignes dans la table 'trajets').\n")
 
 if __name__ == "__main__":
     df_brut = importer_donnees()
